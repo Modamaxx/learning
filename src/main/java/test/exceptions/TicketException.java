@@ -1,4 +1,4 @@
-package test.Exeption;
+package test.exceptions;
 
 import test.Passenger;
 import test.Seller;

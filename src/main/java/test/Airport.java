@@ -1,9 +1,9 @@
 package test;
 
-import test.Exeption.FlyException;
-import test.Exeption.TicketException;
-import test.Exeption.WaitException;
-import test.Interface.IAirport;
+import test.exceptions.FlyException;
+import test.exceptions.TicketException;
+import test.exceptions.WaitException;
+import test.interfaces.IAirport;
 
 public class Airport implements IAirport {
     Flight flight;

@@ -1,6 +1,6 @@
 package test;
 
-import test.Interface.IFly;
+import test.interfaces.IFly;
 
 public abstract class Airplane implements IFly {
     private int numberEngines;

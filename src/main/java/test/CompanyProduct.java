@@ -1,6 +1,6 @@
 package test;
 
-import test.Interface.Ido;
+import test.interfaces.Ido;
 
 public abstract class CompanyProduct implements Ido {
     String nameProduct;

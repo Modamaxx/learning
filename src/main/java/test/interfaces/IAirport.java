@@ -1,4 +1,4 @@
-package test.Interface;
+package test.interfaces;
 
 import test.Passenger;
 import test.Ticket;

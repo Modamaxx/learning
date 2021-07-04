@@ -1,4 +1,4 @@
-package test.Interface;
+package test.interfaces;
 
 public interface IFly {
     void iFly();

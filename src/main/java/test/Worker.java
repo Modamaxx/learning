@@ -1,6 +1,6 @@
 package test;
 
-import test.Interface.IWho;
+import test.interfaces.IWho;
 
 public abstract class Worker implements IWho {
     int workExperience;
