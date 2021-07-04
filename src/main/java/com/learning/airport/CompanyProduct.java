@@ -1,6 +1,6 @@
-package test;
+package com.learning.airport;
 
-import test.interfaces.Ido;
+import com.learning.airport.interfaces.Ido;
 
 public abstract class CompanyProduct implements Ido {
     String nameProduct;

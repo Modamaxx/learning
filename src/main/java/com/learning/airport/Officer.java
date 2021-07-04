@@ -1,6 +1,4 @@
-package test;
-
-import test.Worker;
+package com.learning.airport;
 
 public class Officer extends Worker {
     public Officer()

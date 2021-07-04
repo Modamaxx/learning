@@ -1,8 +1,8 @@
-package test.exceptions;
+package com.learning.airport.exceptions;
 
-import test.Passenger;
-import test.Seller;
-import test.Ticket;
+import com.learning.airport.Passenger;
+import com.learning.airport.Seller;
+import com.learning.airport.Ticket;
 
 public class TicketException extends Exception {
 

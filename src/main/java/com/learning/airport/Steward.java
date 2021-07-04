@@ -1,4 +1,4 @@
-package test;
+package com.learning.airport;
 
 public class Steward extends Worker {
     Alcohol alcohol;

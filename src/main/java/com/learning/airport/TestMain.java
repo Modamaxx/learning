@@ -1,4 +1,4 @@
-package test;
+package com.learning.airport;
 
 import java.util.ArrayList;
 

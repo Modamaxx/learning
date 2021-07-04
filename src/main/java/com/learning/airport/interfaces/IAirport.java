@@ -1,7 +1,7 @@
-package test.interfaces;
+package com.learning.airport.interfaces;
 
-import test.Passenger;
-import test.Ticket;
+import com.learning.airport.Passenger;
+import com.learning.airport.Ticket;
 
 public interface IAirport {
     Ticket buyTickets(Passenger passengers);

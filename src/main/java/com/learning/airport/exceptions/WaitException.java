@@ -1,6 +1,6 @@
-package test.exceptions;
+package com.learning.airport.exceptions;
 
-import test.Steward;
+import com.learning.airport.Steward;
 
 public class WaitException extends Exception {
     public static void WaitExce(Steward steward) {

@@ -1,4 +1,4 @@
-package test;
+package com.learning.airport;
 
 public class NormalAirplane extends Airplane {
     public NormalAirplane(int numberEngines, String Wings) {

@@ -1,6 +1,6 @@
-package test;
+package com.learning.airport;
 
-import test.interfaces.IFly;
+import com.learning.airport.interfaces.IFly;
 
 public abstract class Airplane implements IFly {
     private int numberEngines;

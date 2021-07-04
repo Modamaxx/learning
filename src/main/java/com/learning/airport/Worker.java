@@ -1,6 +1,6 @@
-package test;
+package com.learning.airport;
 
-import test.interfaces.IWho;
+import com.learning.airport.interfaces.IWho;
 
 public abstract class Worker implements IWho {
     int workExperience;

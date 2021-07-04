@@ -1,7 +1,7 @@
-package test.exceptions;
+package com.learning.airport.exceptions;
 
-import test.Passenger;
-import test.Pilot;
+import com.learning.airport.Passenger;
+import com.learning.airport.Pilot;
 
 public class FlyException extends Exception {
 
