@@ -6,8 +6,8 @@ import com.learning.airport.Ticket;
 public interface IAirport {
     Ticket buyTickets(Passenger passengers);
 
-    void Validation(Passenger passenger, Ticket ticket);
+    void validation(Passenger passenger, Ticket ticket);
 
-    void Wait(Passenger passenger);
+    void wait(Passenger passenger);
 
 }

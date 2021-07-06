@@ -11,5 +11,21 @@ public abstract class Airplane implements IFly {
         this.wings = Wings;
     }
 
-    public abstract void iFly();
+    public int getNumberEngines() {
+        return numberEngines;
+    }
+
+    public void setNumberEngines(int numberEngines) {
+        this.numberEngines = numberEngines;
+    }
+
+    public String getWings() {
+        return wings;
+    }
+
+    public void setWings(String wings) {
+        this.wings = wings;
+    }
+
+
 }

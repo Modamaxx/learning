@@ -4,9 +4,9 @@ public class Officer extends Worker {
     public Officer()
     {
         super();
-        Who();
+        who();
     }
-  public void Who(){
-      System.out.printf("\n!Вас проверяет ТАМОЖЕННИК!\n");
+  public void who(){
+      System.out.print("!You are being checked by a CUSTOMS OFFICER!");
     }
 }

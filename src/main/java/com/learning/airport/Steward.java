@@ -1,21 +1,22 @@
 package com.learning.airport;
 
 public class Steward extends Worker {
-    Alcohol alcohol;
-    Cigarettes cigarettes;
+    private Alcohol alcohol;
+    private Cigarettes cigarettes;
 
-    public Steward(String typeAlcohol, String company, int cost,int quantity, String companyC, int costC) {
+    public Steward(String typeAlcohol, String company, int cost, int quantity, String companyC, int costC) {
         super();
         alcohol = new Alcohol(typeAlcohol, cost, company);
         cigarettes = new Cigarettes(companyC, costC, quantity);
-        Who();
-    }
-   public void Who(){
-        System.out.printf("\n!Вы вошли в зал ожидания!\n");
+        this.who();
     }
 
-  public static void cry(CompanyProduct companyProduct){
-        companyProduct.Ido();
+    public void who() {
+        System.out.printf("\n!You have entered the waiting room!\n");
+    }
+
+    public static void cry(CompanyProduct companyProduct) {
+        companyProduct.ido();
     }
 
     public Alcohol getAlcohol() {

@@ -2,7 +2,18 @@ package com.learning.airport;
 
 public class Alcohol extends CompanyProduct {
 
-    String typeAlcohol;
+    private String typeAlcohol;
+
+    public Alcohol(String nameProduct, int cost, String typeAlcohol) {
+        super(nameProduct, cost);
+        this.typeAlcohol = typeAlcohol;
+
+    }
+
+    @Override
+    public void ido() {
+        System.out.printf("\nYou were sold alcohol");
+    }
 
     public String getTypeAlcohol() {
         return typeAlcohol;
@@ -12,14 +23,5 @@ public class Alcohol extends CompanyProduct {
         this.typeAlcohol = typeAlcohol;
     }
 
-    public Alcohol(String nameProduct, int cost, String typeAlcohol) {
-        super(nameProduct, cost);
-        this.typeAlcohol = typeAlcohol;
 
-    }
-
-    @Override
-    public void Ido() {
-        System.out.printf("\nВам продали алкоголь");
-    }
 }

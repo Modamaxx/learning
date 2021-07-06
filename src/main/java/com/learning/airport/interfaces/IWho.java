@@ -1,5 +1,5 @@
 package com.learning.airport.interfaces;
 
 public interface IWho {
-    void Who();
+    void who();
 }

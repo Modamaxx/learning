@@ -7,6 +7,6 @@ public class NormalAirplane extends Airplane {
 
     @Override
     public void iFly() {
-        System.out.printf("\nВы летите на обычном самолете");
+        System.out.printf("\nYou flight classic airplane");
     }
 }

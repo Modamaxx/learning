@@ -4,9 +4,9 @@ public class Seller extends Worker {
    Seller()
    {
        super();
-       Who();
+       this.who();
    }
-   public void Who(){
-       System.out.printf("\n!ОПЕРАТОР продает билеты\n");
+   public void who(){
+       System.out.printf("\n!THE OPERATOR sells tickets\n");
    }
 }

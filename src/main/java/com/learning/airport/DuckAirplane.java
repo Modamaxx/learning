@@ -8,6 +8,6 @@ public class DuckAirplane extends Airplane {
 
     @Override
     public void iFly(){
-        System.out.printf("Вы летите на самолете утка");
+        System.out.printf("You are flying on a duck plane");
     }
 }
