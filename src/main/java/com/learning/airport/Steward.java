@@ -1,13 +1,14 @@
 package com.learning.airport;
 
-public class Steward extends Worker {
-    private Alcohol alcohol;
-    private Cigarettes cigarettes;
+import java.util.HashSet;
+import java.util.Set;
 
-    public Steward(String typeAlcohol, String company, int cost, int quantity, String companyC, int costC) {
+public class Steward extends Worker {
+
+    private static Set<CompanyProduct> setProducts= new HashSet<>();
+
+    public Steward() {
         super();
-        alcohol = new Alcohol(typeAlcohol, cost, company);
-        cigarettes = new Cigarettes(companyC, costC, quantity);
         this.who();
     }
 
@@ -15,23 +16,11 @@ public class Steward extends Worker {
         System.out.printf("\n!You have entered the waiting room!\n");
     }
 
-    public static void cry(CompanyProduct companyProduct) {
-        companyProduct.ido();
+    public Set<CompanyProduct> getSetProducts() {
+        return setProducts;
     }
 
-    public Alcohol getAlcohol() {
-        return alcohol;
-    }
-
-    public void setAlcohol(Alcohol alcohol) {
-        this.alcohol = alcohol;
-    }
-
-    public Cigarettes getCigarettes() {
-        return cigarettes;
-    }
-
-    public void setCigarettes(Cigarettes cigarettes) {
-        this.cigarettes = cigarettes;
+    public void setSetProducts(CompanyProduct product) {
+        this.setProducts.add(product);
     }
 }

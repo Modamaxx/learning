@@ -5,6 +5,8 @@ import com.learning.airport.exceptions.TicketException;
 import com.learning.airport.exceptions.WaitException;
 import com.learning.airport.interfaces.IAirport;
 
+import java.util.LinkedList;
+
 public class Airport implements IAirport {
     private Flight flight;
 
@@ -60,19 +62,35 @@ public class Airport implements IAirport {
         }
     }
 
-    public void wait(Passenger passenger) {
-        Steward steward = new Steward("Vodka", "Air", 5, 2, "Kamal", 2); //Буффетчик который продает алкоголь
+    public void wait(Passenger passenger, Steward steward) {
         System.out.printf("\nYou go to the buffet");
-        steward.cry(steward.getAlcohol());
-        Steward.cry(steward.getCigarettes());
+        for (CompanyProduct f : steward.getSetProducts()) {
+            System.out.printf("You bought it at the buffet " + f.getNameProduct());
+            break;
+        }
         if (steward.getWorkExperience() <= 2) {
             throw new WaitException("\nYou were sold spoiled food-you died");
         }
     }
 
-    public void fly(Passenger passenger) {
+    public void loadingThings(Passenger passenger) {
+        Suitcase one = new Suitcase("Black", 5);
+        Suitcase two = new Suitcase("Green", "three");
+        passenger.setLuggage(one);
+        passenger.setLuggage(two);
+        System.out.printf("\nFinished, luggage consist of ");
+        int index = 1;
+        for (Suitcase f : passenger.getLuggage()) {
+            System.out.printf("\nSuitcase number " + index + "\ncolor=" + f.getColor() + "\nnumber of items " + f.getNumberItems());
+            index++;
+        }
 
-        Pilot pilot = new Pilot(2, "Center", 4, "Somewhere else");
+    }
+
+    public void fly(Passenger passenger, LinkedList<Airplane> airplanes) {
+
+        Pilot pilot = new Pilot(airplanes.get(0).getId(), airplanes.get(0).getNumberEngines(), airplanes.get(0).getWings(),
+                airplanes.get(1).getId(), airplanes.get(1).getNumberEngines(), airplanes.get(1).getWings());
         pilot.iFly(pilot.getDuckAirplane());
         pilot.iFly(pilot.getNormalAirplane());
         if (pilot.getWorkExperience() >= 2) {

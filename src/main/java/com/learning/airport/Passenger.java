@@ -1,19 +1,21 @@
 package com.learning.airport;
 
+import java.util.Vector;
+
 public class Passenger {
     private String name;
-    private String passport;
+    private int passport;
     private String startCountry;
     private String finishCountry;
     private String visa;
+    private Vector<Suitcase> luggage = new Vector<>(2,1);
 
-    public Passenger(String name, String passport, String startCountry, String finishCountry,String visa) {
-
+    public Passenger(String name, int passport, String startCountry, String finishCountry, String visa) {
         this.name = name;
         this.passport = passport;
         this.startCountry = startCountry;
         this.finishCountry = finishCountry;
-        this.visa=visa;
+        this.visa = visa;
     }
 
     public void setVisa(String visa) {
@@ -32,8 +34,7 @@ public class Passenger {
         this.name = name;
     }
 
-
-    public String getPassport() {
+    public int getPassport() {
         return passport;
     }
 
@@ -57,5 +58,11 @@ public class Passenger {
         return finishCountry;
     }
 
+    public Vector<Suitcase> getLuggage() {
+        return luggage;
+    }
 
+    public void setLuggage(Suitcase suitcase) {
+        luggage.add(suitcase);
+    }
 }

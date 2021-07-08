@@ -4,10 +4,11 @@ public class Pilot extends Worker {
     private DuckAirplane duckAirplane;
     private NormalAirplane normalAirplane;
 
-    public Pilot(int numberEnginesD, String wingsD, int numberEnginesN, String wingsN) {
+    public Pilot(int idD,int numberEnginesD, String wingsD, int idN,int numberEnginesN, String wingsN) {
         super();
-        duckAirplane = new DuckAirplane(numberEnginesD, wingsD);
-        normalAirplane = new NormalAirplane(numberEnginesN, wingsN);
+        duckAirplane = new DuckAirplane(idD,numberEnginesD, wingsD);
+
+        normalAirplane = new NormalAirplane(idN,numberEnginesN, wingsN);
         who();
     }
 

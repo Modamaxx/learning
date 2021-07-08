@@ -1,17 +1,30 @@
 package com.learning.airport;
 
-import com.learning.airport.interfaces.Ido;
-
-public abstract class CompanyProduct implements Ido {
+public class CompanyProduct<A, B> {
+    private int id;
     private String nameProduct;
-    private int cost;
+    private B cost;
+    private A size;
 
-    public CompanyProduct(String nameProduct, int cost) {
+    public CompanyProduct(int id, A size, String nameProduct, B cost) {
+        this.id = id;
         this.nameProduct = nameProduct;
         this.cost = cost;
+        this.size = size;
+        TestMain.getLOGGER().info("Type data A=" + size.getClass().getSimpleName());
+        TestMain.getLOGGER().info("Type data B=" + cost.getClass().getSimpleName());
     }
 
-    public abstract void ido();
+    @Override
+    public boolean equals(Object o) {
+        CompanyProduct other = (CompanyProduct) o;
+        return nameProduct.equals(other.nameProduct) && size.equals(other.size) && cost.equals(other.cost);
+    }
+
+    @Override
+    public int hashCode() {
+        return id;
+    }
 
     public String getNameProduct() {
         return nameProduct;
@@ -21,15 +34,20 @@ public abstract class CompanyProduct implements Ido {
         this.nameProduct = nameProduct;
     }
 
-    public int getCost() {
+    public B getCost() {
         return cost;
     }
 
-    public void setCost(int cost) {
+    public void setCost(B cost) {
         this.cost = cost;
     }
 
+    public A getSize() {
+        return size;
+    }
 
-
+    public void setSize(A size) {
+        this.size = size;
+    }
 
 }
