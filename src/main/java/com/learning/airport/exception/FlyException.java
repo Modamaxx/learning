@@ -1,4 +1,4 @@
-package com.learning.airport.exceptions;
+package com.learning.airport.exception;
 
 public class FlyException extends RuntimeException {
     public FlyException(String messageError) {

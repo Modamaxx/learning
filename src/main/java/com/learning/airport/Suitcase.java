@@ -1,8 +1,8 @@
 package com.learning.airport;
 
 public class Suitcase<A> {
-  private   String color;
-   private A numberItems;
+    private String color;
+    private A numberItems;
 
     public Suitcase(String color, A numberItems) {
         this.color = color;

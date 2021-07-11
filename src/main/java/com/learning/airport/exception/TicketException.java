@@ -1,4 +1,4 @@
-package com.learning.airport.exceptions;
+package com.learning.airport.exception;
 
 public class TicketException extends RuntimeException {
     public TicketException(String messageError) {

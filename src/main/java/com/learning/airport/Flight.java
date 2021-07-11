@@ -7,10 +7,10 @@ public class Flight {
     private Passenger passenger;
     private HashMap<Integer, String> passportsAndNames = new HashMap<>();
 
-    public Flight(Passenger passenger,Ticket ticket) {
+    public Flight(Passenger passenger, Ticket ticket) {
         this.ticket = ticket;
         this.passenger = passenger;
-        passportsAndNames.put(passenger.getPassport(),passenger.getName());
+        passportsAndNames.put(passenger.getPassport(), passenger.getName());
 
     }
 
@@ -29,6 +29,7 @@ public class Flight {
     public void setPassenger(Passenger passenger) {
         this.passenger = passenger;
     }
+
     public HashMap<Integer, String> getPassportsAndNames() {
         return passportsAndNames;
     }

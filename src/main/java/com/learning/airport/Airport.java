@@ -1,9 +1,13 @@
 package com.learning.airport;
 
-import com.learning.airport.exceptions.FlyException;
-import com.learning.airport.exceptions.TicketException;
-import com.learning.airport.exceptions.WaitException;
+import com.learning.airport.exception.FlyException;
+import com.learning.airport.exception.TicketException;
+import com.learning.airport.exception.WaitException;
 import com.learning.airport.interfaces.IAirport;
+import com.learning.airport.worker.Officer;
+import com.learning.airport.worker.Pilot;
+import com.learning.airport.worker.Seller;
+import com.learning.airport.worker.Steward;
 
 import java.util.LinkedList;
 
@@ -13,12 +17,11 @@ public class Airport implements IAirport {
     public Ticket buyTickets(Passenger passengers) {
         Ticket ticket = new Ticket();
         Seller seller = new Seller();
-
         if (seller.getWorkExperience() <= 2) {
             ticket.setStartCountry(passengers.getFinishCountry().toString());
             ticket.setFinishCountry(passengers.getStartCountry().toString());
             ticket.setVisa(passengers.getVisa().substring(0, 5)); //удаляю два символа
-            System.out.printf("The ticket purchase was successful,but the seller is inexperienced");
+            TestMain.getLOGGER().info("The ticket purchase was successful,but the seller is inexperienced");
             return ticket;
 
         } else {
@@ -26,7 +29,7 @@ public class Airport implements IAirport {
                 ticket.setStartCountry(passengers.getStartCountry().toString());
                 ticket.setFinishCountry(passengers.getFinishCountry().toString());
                 ticket.setVisa(passengers.getVisa());
-                System.out.printf("The ticket purchase was successful");
+                TestMain.getLOGGER().info("The ticket purchase was successful");
                 return ticket;
             } else {
                 throw new TicketException("You can't travel from point A to point A");
@@ -40,32 +43,32 @@ public class Airport implements IAirport {
 
         Officer officer = new Officer();
         if ((officer.getWorkExperience() >= 2) & (passenger.getVisa().toString() != ticket.getVisa().toString())) {
-            System.out.printf("\ndata on the visa specified incorrect");
+            TestMain.getLOGGER().info("\ndata on the visa specified incorrect");
             System.exit(0);
         }
 
         if (passenger.getStartCountry() == passenger.getFinishCountry()) //Если путь идет из точки А в точку А
         {
-            System.out.printf("\nyour ticket is defective");
+            TestMain.getLOGGER().info("\nyour ticket is defective");
             System.exit(0);
         }
 
 
         if (passenger.getStartCountry().toString() == ticket.getStartCountry().toString() &&
                 passenger.getFinishCountry().toString() == ticket.getFinishCountry().toString()) {
-            System.out.printf("\nYou have passed customs");
+            TestMain.getLOGGER().info("\nYou have passed customs");
 
         } else {
-            System.out.printf("\nYou haven't passed customs, you have problems with your ticket ");
+            TestMain.getLOGGER().info("\nYou haven't passed customs, you have problems with your ticket ");
             System.exit(0);
 
         }
     }
 
     public void wait(Passenger passenger, Steward steward) {
-        System.out.printf("\nYou go to the buffet");
+        TestMain.getLOGGER().info("\nYou go to the buffet");
         for (CompanyProduct f : steward.getSetProducts()) {
-            System.out.printf("You bought it at the buffet " + f.getNameProduct());
+            TestMain.getLOGGER().info("You bought it at the buffet " + f.getNameProduct());
             break;
         }
         if (steward.getWorkExperience() <= 2) {
@@ -78,10 +81,10 @@ public class Airport implements IAirport {
         Suitcase two = new Suitcase("Green", "three");
         passenger.setLuggage(one);
         passenger.setLuggage(two);
-        System.out.printf("\nFinished, luggage consist of ");
+        TestMain.getLOGGER().info("\nFinished, luggage consist of ");
         int index = 1;
         for (Suitcase f : passenger.getLuggage()) {
-            System.out.printf("\nSuitcase number " + index + "\ncolor=" + f.getColor() + "\nnumber of items " + f.getNumberItems());
+            TestMain.getLOGGER().info("\nSuitcase number " + index + "\ncolor=" + f.getColor() + "\nnumber of items " + f.getNumberItems());
             index++;
         }
 
@@ -94,7 +97,7 @@ public class Airport implements IAirport {
         pilot.iFly(pilot.getDuckAirplane());
         pilot.iFly(pilot.getNormalAirplane());
         if (pilot.getWorkExperience() >= 2) {
-            System.out.printf("\nYou have arrived");
+            TestMain.getLOGGER().info("\nYou have arrived");
         } else {
             throw new FlyException("\nThe pilot made a mistake and you crashed");
         }

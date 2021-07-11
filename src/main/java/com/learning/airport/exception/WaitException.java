@@ -1,4 +1,4 @@
-package com.learning.airport.exceptions;
+package com.learning.airport.exception;
 
 public class WaitException extends RuntimeException {
     public WaitException(String messageError) {

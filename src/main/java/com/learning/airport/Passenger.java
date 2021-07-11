@@ -8,7 +8,7 @@ public class Passenger {
     private String startCountry;
     private String finishCountry;
     private String visa;
-    private Vector<Suitcase> luggage = new Vector<>(2,1);
+    private Vector<Suitcase> luggage = new Vector<>(2, 1);
 
     public Passenger(String name, int passport, String startCountry, String finishCountry, String visa) {
         this.name = name;

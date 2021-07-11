@@ -7,10 +7,10 @@ public abstract class Airplane implements IFly {
     private int numberEngines;
     private String wings;
 
-    public Airplane(int id,int numberEngines, String Wings) {
+    public Airplane(int id, int numberEngines, String Wings) {
         this.numberEngines = numberEngines;
         this.wings = Wings;
-        this.id=id;
+        this.id = id;
     }
 
     public int getNumberEngines() {

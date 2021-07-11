@@ -1,11 +1,15 @@
-package com.learning.airport;
+package com.learning.airport.worker;
+
+import com.learning.airport.CompanyProduct;
+import com.learning.airport.TestMain;
+import com.learning.airport.Worker;
 
 import java.util.HashSet;
 import java.util.Set;
 
 public class Steward extends Worker {
 
-    private static Set<CompanyProduct> setProducts= new HashSet<>();
+    private static Set<CompanyProduct> setProducts = new HashSet<>();
 
     public Steward() {
         super();
@@ -13,7 +17,7 @@ public class Steward extends Worker {
     }
 
     public void who() {
-        System.out.printf("\n!You have entered the waiting room!\n");
+        TestMain.getLOGGER().info("\n!You have entered the waiting room!\n");
     }
 
     public Set<CompanyProduct> getSetProducts() {

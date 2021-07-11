@@ -1,5 +1,8 @@
 package com.learning.airport;
 
+import com.learning.airport.airplane.DuckAirplane;
+import com.learning.airport.airplane.NormalAirplane;
+import com.learning.airport.worker.Steward;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -24,12 +27,12 @@ public class TestMain {
         steward.setSetProducts(product3);
 
         LinkedList<Airplane> airplanes = new LinkedList<Airplane>();
-        DuckAirplane e = new DuckAirplane(238459,5,"f");
-        NormalAirplane s= new NormalAirplane(395295,4,"e");
+        DuckAirplane e = new DuckAirplane(238459, 5, "f");
+        NormalAirplane s = new NormalAirplane(395295, 4, "e");
         airplanes.add(e);
         airplanes.add(s);
 
-        System.out.println(steward.getSetProducts().size());
+        LOGGER.info(steward.getSetProducts().size());
 
         Airport airport = new Airport();
         ArrayList<Flight> flights = new ArrayList<Flight>();
@@ -39,11 +42,11 @@ public class TestMain {
         Flight flight1 = new Flight(passenger, airport.buyTickets(passenger)); //Создание рейса,запись его данных
         airport.validation(flight1.getPassenger(), flight1.getTicket());// Проходит валидация купленного билета
 
-        airport.wait(flight1.getPassenger(),steward);// Ожидает свой рейс в зале ожидания(буффет)
+        airport.wait(flight1.getPassenger(), steward);// Ожидает свой рейс в зале ожидания(буффет)
 
         airport.loadingThings(passenger);
 
-        airport.fly(flight1.getPassenger(),airplanes); // Перелет
+        airport.fly(flight1.getPassenger(), airplanes); // Перелет
 
         airport.validation(flight1.getPassenger(), flight1.getTicket()); // Проходит валидация купленного билета
 
@@ -53,6 +56,7 @@ public class TestMain {
                     + " finish flight" + " flew from " + passenger.getStartCountry() + " in " + passenger.getFinishCountry());
         }
 
+        // myFile = new File("src/main/resources/myFile.txt");
 
     }
 

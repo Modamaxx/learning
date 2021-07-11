@@ -22,13 +22,14 @@ public class Ticket {
         this.startCountry = startCountry;
     }
 
-   public void setFinishCountry(String finishCountry) {
+    public void setFinishCountry(String finishCountry) {
         this.finishCountry = finishCountry;
     }
 
     public String getFinishCountry() {
         return finishCountry;
     }
+
     public void setVisa(String visa) {
         this.visa = visa;
     }
