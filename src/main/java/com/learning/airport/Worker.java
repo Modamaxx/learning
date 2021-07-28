@@ -3,11 +3,14 @@ package com.learning.airport;
 import com.learning.airport.interfaces.IWho;
 
 public abstract class Worker implements IWho {
+    /**
+     * save work Experience worker
+     */
     private int workExperience;
 
     public Worker() {
 
-        this.workExperience = (int) (Math.random() * 10);
+        this.workExperience = 5;
     }
 
     public abstract void who();

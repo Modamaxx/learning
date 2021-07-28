@@ -3,11 +3,29 @@ package com.learning.airport;
 import java.util.Vector;
 
 public class Passenger {
+    /**
+     * save name Passenger
+     */
     private String name;
+    /**
+     * save data passport Passenger
+     */
     private int passport;
+    /**
+     * save data start Country
+     */
     private String startCountry;
+    /**
+     * save finish Country
+     */
     private String finishCountry;
+    /**
+     * save data visa Passenger
+     */
     private String visa;
+    /**
+     * save data about luggage Passenger
+     */
     private Vector<Suitcase> luggage = new Vector<>(2, 1);
 
     public Passenger(String name, int passport, String startCountry, String finishCountry, String visa) {

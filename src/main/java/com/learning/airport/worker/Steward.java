@@ -8,7 +8,9 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class Steward extends Worker {
-
+    /**
+     * save Products which sold
+     */
     private static Set<CompanyProduct> setProducts = new HashSet<>();
 
     public Steward() {
@@ -16,6 +18,9 @@ public class Steward extends Worker {
         this.who();
     }
 
+    /**
+     * who work
+     */
     public void who() {
         TestMain.getLOGGER().info("\n!You have entered the waiting room!\n");
     }

@@ -1,9 +1,21 @@
 package com.learning.airport;
 
 public class CompanyProduct<A, B> {
+    /**
+     * save id Company Products that is being sold
+     */
     private int id;
+    /**
+     * save the name of the Products that is being sold
+     */
     private String nameProduct;
+    /**
+     * save cost Products
+     */
     private B cost;
+    /**
+     * save size Products
+     */
     private A size;
 
     public CompanyProduct(int id, A size, String nameProduct, B cost) {

@@ -7,8 +7,13 @@ import com.learning.airport.airplane.DuckAirplane;
 import com.learning.airport.airplane.NormalAirplane;
 
 public class Pilot extends Worker {
-
+    /**
+     * save duck Airplane
+     */
     private DuckAirplane duckAirplane;
+    /**
+     * save normal Airplane
+     */
     private NormalAirplane normalAirplane;
 
     public Pilot(int idD, int numberEnginesD, String wingsD, int idN, int numberEnginesN, String wingsN) {
@@ -18,9 +23,17 @@ public class Pilot extends Worker {
         who();
     }
 
+    /**
+     * proof of flight
+     * @param airplane
+     */
     public static void iFly(Airplane airplane) {
         airplane.iFly();
     }
+
+    /**
+     * who worker
+     */
 
     public void who() {
         TestMain.getLOGGER().info("!The plane is controlled by a PILOT!");

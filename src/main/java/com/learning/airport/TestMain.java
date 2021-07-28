@@ -9,13 +9,23 @@ import org.apache.logging.log4j.Logger;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
+/**
+ * Test Main
+ */
 public class TestMain {
+    /**
+     * for print all console
+     */
     private final static Logger LOGGER = LogManager.getLogger(TestMain.class);
 
     public static Logger getLOGGER() {
         return LOGGER;
     }
 
+    /**
+     * Start program
+     * @param args
+     */
     public static void main(String[] args) {
         Steward steward = new Steward(); //Буффетчик который продает алкоголь
 

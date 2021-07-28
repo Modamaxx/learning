@@ -5,9 +5,10 @@ import com.learning.airport.Ticket;
 import com.learning.airport.worker.Steward;
 
 public interface IAirport {
+
     Ticket buyTickets(Passenger passengers);
 
-    void validation(Passenger passenger, Ticket ticket);
+    String validation(Passenger passenger, Ticket ticket);
 
     public void loadingThings(Passenger passenger);
 

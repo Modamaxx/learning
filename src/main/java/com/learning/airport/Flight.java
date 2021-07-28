@@ -3,8 +3,17 @@ package com.learning.airport;
 import java.util.HashMap;
 
 public class Flight {
+    /**
+     * save data about ticket Passenger
+     */
     private Ticket ticket;
+    /**
+     * save data about Passenger
+     */
     private Passenger passenger;
+    /**
+     * save passports data Passengers and her name
+     */
     private HashMap<Integer, String> passportsAndNames = new HashMap<>();
 
     public Flight(Passenger passenger, Ticket ticket) {

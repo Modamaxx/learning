@@ -1,13 +1,23 @@
 package com.learning.airport;
 
 public class Ticket {
+    /**
+     * save start Country Passenger
+     */
     private String startCountry;
+    /**
+     * save finish Country Passenger
+     */
     private String finishCountry;
+    /**
+     * save data visa Passenger
+     */
     private String visa;
 
-    public Ticket(String startCountry, String finishCountry) {
+    public Ticket(String startCountry, String finishCountry,String visa) {
         this.startCountry = startCountry;
         this.finishCountry = finishCountry;
+        this.visa= visa;
     }
 
     public Ticket() {

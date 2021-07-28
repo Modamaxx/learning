@@ -9,6 +9,9 @@ public class Seller extends Worker {
         this.who();
     }
 
+    /**
+     * who work
+     */
     public void who() {
         TestMain.getLOGGER().info("\n!THE OPERATOR sells tickets\n");
     }

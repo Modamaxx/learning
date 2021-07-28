@@ -12,8 +12,16 @@ import com.learning.airport.worker.Steward;
 import java.util.LinkedList;
 
 public class Airport implements IAirport {
+    /**
+     * save data about flight
+     */
     private Flight flight;
 
+    /**
+     * Passenger but Tickets
+     * @param passengers
+     * @return object ticket
+     */
     public Ticket buyTickets(Passenger passengers) {
         Ticket ticket = new Ticket();
         Seller seller = new Seller();
@@ -39,32 +47,42 @@ public class Airport implements IAirport {
 
     }
 
-    public void validation(Passenger passenger, Ticket ticket) {
+    /**
+     *
+     * @param passenger
+     * @param ticket
+     * @return validation finish
+     */
+    public String validation(Passenger passenger, Ticket ticket) {
 
         Officer officer = new Officer();
         if ((officer.getWorkExperience() >= 2) & (passenger.getVisa().toString() != ticket.getVisa().toString())) {
-            TestMain.getLOGGER().info("\ndata on the visa specified incorrect");
-            System.exit(0);
+            return "data on the visa specified incorrect";
+
         }
 
         if (passenger.getStartCountry() == passenger.getFinishCountry()) //Если путь идет из точки А в точку А
         {
-            TestMain.getLOGGER().info("\nyour ticket is defective");
-            System.exit(0);
-        }
+            return "\nyour ticket is defective";
 
+        }
 
         if (passenger.getStartCountry().toString() == ticket.getStartCountry().toString() &&
                 passenger.getFinishCountry().toString() == ticket.getFinishCountry().toString()) {
-            TestMain.getLOGGER().info("\nYou have passed customs");
+            return "\nYou have passed customs";
 
         } else {
-            TestMain.getLOGGER().info("\nYou haven't passed customs, you have problems with your ticket ");
-            System.exit(0);
+            return "You haven't passed customs, you have problems with your ticket ";
+
 
         }
     }
 
+    /**
+     * a passenger is waiting for his flight in the waiting room
+     * @param passenger
+     * @param steward
+     */
     public void wait(Passenger passenger, Steward steward) {
         TestMain.getLOGGER().info("\nYou go to the buffet");
         for (CompanyProduct f : steward.getSetProducts()) {
@@ -76,6 +94,10 @@ public class Airport implements IAirport {
         }
     }
 
+    /**
+     * loading the passenger's belongings on board the aircraft
+     * @param passenger
+     */
     public void loadingThings(Passenger passenger) {
         Suitcase one = new Suitcase("Black", 5);
         Suitcase two = new Suitcase("Green", "three");
@@ -90,6 +112,11 @@ public class Airport implements IAirport {
 
     }
 
+    /**
+     * A passenger is flying
+     * @param passenger
+     * @param airplanes
+     */
     public void fly(Passenger passenger, LinkedList<Airplane> airplanes) {
 
         Pilot pilot = new Pilot(airplanes.get(0).getId(), airplanes.get(0).getNumberEngines(), airplanes.get(0).getWings(),

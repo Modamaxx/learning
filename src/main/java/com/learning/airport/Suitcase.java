@@ -1,7 +1,13 @@
 package com.learning.airport;
 
 public class Suitcase<A> {
+    /**
+     * save color Suitcase
+     */
     private String color;
+    /**
+     * save number Items Suitcase
+     */
     private A numberItems;
 
     public Suitcase(String color, A numberItems) {

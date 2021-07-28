@@ -9,6 +9,9 @@ public class Officer extends Worker {
         who();
     }
 
+    /**
+     * who work
+     */
     public void who() {
         TestMain.getLOGGER().info("!You are being checked by a CUSTOMS OFFICER!");
     }

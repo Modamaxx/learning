@@ -2,9 +2,19 @@ package com.learning.airport;
 
 import com.learning.airport.interfaces.IFly;
 
+
 public abstract class Airplane implements IFly {
+    /**
+     * save id Airplane
+     */
     private int id;
+    /**
+     * save number Airplane
+     */
     private int numberEngines;
+    /**
+     * save count wings Airplane
+     */
     private String wings;
 
     public Airplane(int id, int numberEngines, String Wings) {
