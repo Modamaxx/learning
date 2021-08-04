@@ -10,8 +10,8 @@ public interface IAirport {
 
     String validation(Passenger passenger, Ticket ticket);
 
-    public void loadingThings(Passenger passenger);
+    public String loadingThings(Passenger passenger);
 
-    void wait(Passenger passenger, Steward steward);
+    String wait(Passenger passenger, Steward steward);
 
 }

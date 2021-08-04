@@ -10,6 +10,7 @@ import com.learning.airport.worker.Seller;
 import com.learning.airport.worker.Steward;
 
 import java.util.LinkedList;
+import java.util.Objects;
 
 public class Airport implements IAirport {
     /**
@@ -45,10 +46,10 @@ public class Airport implements IAirport {
 
         }
 
+
     }
 
     /**
-     *
      * @param passenger
      * @param ticket
      * @return validation finish
@@ -80,51 +81,49 @@ public class Airport implements IAirport {
 
     /**
      * a passenger is waiting for his flight in the waiting room
+     *
      * @param passenger
      * @param steward
      */
-    public void wait(Passenger passenger, Steward steward) {
-        TestMain.getLOGGER().info("\nYou go to the buffet");
-        for (CompanyProduct f : steward.getSetProducts()) {
-            TestMain.getLOGGER().info("You bought it at the buffet " + f.getNameProduct());
-            break;
+    public String wait(Passenger passenger, Steward steward) {
+
+
+        if (steward.getWorkExperience() >= 2) {
+            return  "You were sold spoiled food-you died";
         }
-        if (steward.getWorkExperience() <= 2) {
-            throw new WaitException("\nYou were sold spoiled food-you died");
-        }
+        else
+            return "f";
     }
 
     /**
      * loading the passenger's belongings on board the aircraft
+     *
      * @param passenger
      */
-    public void loadingThings(Passenger passenger) {
+    public String loadingThings(Passenger passenger) {
         Suitcase one = new Suitcase("Black", 5);
         Suitcase two = new Suitcase("Green", "three");
         passenger.setLuggage(one);
         passenger.setLuggage(two);
-        TestMain.getLOGGER().info("\nFinished, luggage consist of ");
-        int index = 1;
-        for (Suitcase f : passenger.getLuggage()) {
-            TestMain.getLOGGER().info("\nSuitcase number " + index + "\ncolor=" + f.getColor() + "\nnumber of items " + f.getNumberItems());
-            index++;
-        }
+       return "Finished, luggage consist of ";
+
 
     }
 
     /**
      * A passenger is flying
+     *
      * @param passenger
      * @param airplanes
      */
-    public void fly(Passenger passenger, LinkedList<Airplane> airplanes) {
+    public String  fly(Passenger passenger, LinkedList<Airplane> airplanes) {
 
         Pilot pilot = new Pilot(airplanes.get(0).getId(), airplanes.get(0).getNumberEngines(), airplanes.get(0).getWings(),
                 airplanes.get(1).getId(), airplanes.get(1).getNumberEngines(), airplanes.get(1).getWings());
         pilot.iFly(pilot.getDuckAirplane());
         pilot.iFly(pilot.getNormalAirplane());
         if (pilot.getWorkExperience() >= 2) {
-            TestMain.getLOGGER().info("\nYou have arrived");
+           return  "You have arrived";
         } else {
             throw new FlyException("\nThe pilot made a mistake and you crashed");
         }

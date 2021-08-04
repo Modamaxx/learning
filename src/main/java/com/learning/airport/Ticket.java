@@ -1,5 +1,7 @@
 package com.learning.airport;
 
+import java.util.Objects;
+
 public class Ticket {
     /**
      * save start Country Passenger
@@ -14,15 +16,25 @@ public class Ticket {
      */
     private String visa;
 
-    public Ticket(String startCountry, String finishCountry,String visa) {
+    public Ticket(String startCountry, String finishCountry, String visa) {
         this.startCountry = startCountry;
         this.finishCountry = finishCountry;
-        this.visa= visa;
+        this.visa = visa;
     }
 
     public Ticket() {
     }
 
+    @Override
+    public boolean equals(Object o) {
+        Ticket other = (Ticket) o;
+        return startCountry.equals(other.startCountry) && finishCountry.equals(other.finishCountry) && visa.equals(other.visa);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(startCountry, finishCountry, visa);
+    }
 
     public String getStartCountry() {
         return startCountry;
