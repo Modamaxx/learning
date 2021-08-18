@@ -2,6 +2,7 @@ package Task3.service;
 
 import Task3.controller.web.servlet.Registration;
 import Task3.model.Person;
+import Task3.storage.Users;
 
 public class Validation {
 
@@ -11,13 +12,14 @@ public class Validation {
 
     }
 
-    public boolean validRegistration(String login, String password, String fio, String date) {
+    public boolean validRegistration(Person person){
 
-        if ((login.equals("")) || (password.equals("")) || (fio.equals("")) || (date.equals(""))) {
+        if ((person.getLogin().equals("")) || (person.getPassword().equals(""))
+                || (person.getBirthday().equals("")) || (person.getFio().equals(""))) {
             return false;
         }
-        for (Person p:Registration.users) {
-            if(login.equals(p.getLogin())){
+        for (Person p: Users.users) {
+            if( person.getLogin().equals(p.getLogin())){
                 return false;
             }
         }
@@ -25,13 +27,15 @@ public class Validation {
     }
 
     public Person validAuthorization(String login, String password) {
-        for (Person p : Registration.users) {
+        for (Person p : Users.users) {
             if ((p.getLogin().equals(login)) && (p.getPassword().equals(password))) {
                 return p;
             }
         }
         return null;
     }
+
+
 
     public static Validation getInstance() {
         return instance;

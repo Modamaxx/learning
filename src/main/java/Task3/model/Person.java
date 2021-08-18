@@ -15,6 +15,14 @@ public class Person {
         letters= new ArrayList<Letter>();
     }
 
+    public Person(String login, String password, String fio, String birthday) {
+        this.login = login;
+        this.password = password;
+        this.fio = fio;
+        this.birthday = birthday;
+        this.letters = new ArrayList<Letter>();
+    }
+
     public String getLogin() {
         return login;
     }

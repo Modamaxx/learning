@@ -2,6 +2,7 @@ package Task3.controller.web.servlet;
 
 import Task3.model.Person;
 import Task3.service.Validation;
+import Task3.service.WorkWithPerson;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,14 +11,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.ArrayList;
 
 @WebServlet(name = "Authorization", urlPatterns = "/signIn")
 public class Authorization extends HttpServlet {
+    private final WorkWithPerson workWithPerson;
     private final Validation validation;
 
     public Authorization() {
+        this.workWithPerson = WorkWithPerson.getInstance();
         this.validation = Validation.getInstance();
     }
 
@@ -29,12 +30,11 @@ public class Authorization extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Person p = validation.validAuthorization(req.getParameter("login"), req.getParameter("password"));
-        if (p!=null) {
-            HttpSession session= req.getSession();
-            session.setAttribute("person",p);
+        Person person = validation.validAuthorization(req.getParameter("login"), req.getParameter("password"));
 
-            req.setAttribute("person", p);
+        if (person != null) {
+            workWithPerson.save(req, person);
+            req.setAttribute("person", person);
             req.getRequestDispatcher("/views/menu.jsp").forward(req, resp);
         } else {
             req.setAttribute("error", "The data entered is incorrect, or you have not registered");
